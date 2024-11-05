@@ -18,3 +18,26 @@ ggplot(filtered_data, aes(x = arousal_M, y = valencia_M, color = tipo, shape = t
   labs(x = "Activación", y = "Valencia") +
   theme_minimal() +
   theme(legend.title = element_blank())
+
+
+Este es el plot de emojis
+
+ggplot(data |> 
+         filter(
+           poblacion == "all"
+           ), 
+       aes( x = Valence, 
+            y = Arousal, 
+            fill = Stimuli)) +
+  geom_image(
+    aes(
+      image = Stimuli
+      ), 
+      size = .045) +
+  #geom_point() +
+  coord_flip() +
+  ylim(c("1", "2", "3", "4", "5", "6", "7", "8")) +
+  xlim(c("1", "2", "3", "4", "5", "6", "7", "8")) +
+  xlab("Valencia") +
+  ylab("Activación") +
+  theme_minimal()
